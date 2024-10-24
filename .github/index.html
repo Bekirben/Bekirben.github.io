@@ -15,7 +15,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-image: url('https://your-image-url.com'); /* Gizemli arka plan resmi */
+            background-image: url('https://images.unsplash.com/photo-1493932201046-29f16a9e6b6c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwyMDg5NzZ8MHwxfGFsbHwxfHx8fHx8fHwxNjQxNzM4MDYx&ixlib=rb-1.2.1&q=80&w=1080'); /* Gizemli arka plan resmi */
             background-size: cover;
             background-position: center;
         }
@@ -51,7 +51,6 @@
             background-color: orange;
         }
 
-        /* İçeri girince aktif olacak ekran */
         .scary-screen {
             display: none;
             background-color: black;
@@ -83,26 +82,20 @@
         <a href="#" class="btn" id="enterBtn">İçeri Gir</a>
     </div>
 
-    <!-- Korkutucu ekran -->
     <div class="scary-screen" id="scaryScreen">
         <h2>Sen sahtesin... Sen lanetlisin!</h2>
         <p>ﻻﺗﻠﻌﺏ ﻣﻊ ﻣﺎ ﻻ ﺗﻌﺮﻓﻪ</p>
     </div>
 
-    <!-- Javascript Kısmı -->
     <script>
         const enterBtn = document.getElementById('enterBtn');
         const scaryScreen = document.getElementById('scaryScreen');
 
         enterBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            // Hoşgeldin kısmını gizle
             document.querySelector('.container').style.display = 'none';
-            // Korkutucu ekranı göster
             scaryScreen.style.display = 'flex';
-
-            // Korkutucu müziği çal
-            const audio = new Audio('https://your-scary-music-url.com'); // Müzik linkini buraya koyabilirsin
+            const audio = new Audio('https://www.myinstants.com/media/sounds/horror-scream.mp3'); // Korkutucu müzik linki
             audio.play();
         });
     </script>
