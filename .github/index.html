@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoşgeldin...</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('https://your-image-url.com'); /* Gizemli arka plan resmi */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 50px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            font-size: 50px;
+            color: darkorange;
+        }
+
+        p {
+            font-size: 20px;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            background-color: darkorange;
+            color: #000;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: orange;
+        }
+
+        /* İçeri girince aktif olacak ekran */
+        .scary-screen {
+            display: none;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .scary-screen h2 {
+            font-size: 40px;
+            color: red;
+        }
+
+        .scary-screen p {
+            color: white;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hoşgeldin...</h1>
+        <p>Karanlık bir dünyaya adım atmaya hazır mısın?</p>
+        <a href="#" class="btn" id="enterBtn">İçeri Gir</a>
+    </div>
+
+    <!-- Korkutucu ekran -->
+    <div class="scary-screen" id="scaryScreen">
+        <h2>Sen sahtesin... Sen lanetlisin!</h2>
+        <p>ﻻﺗﻠﻌﺏ ﻣﻊ ﻣﺎ ﻻ ﺗﻌﺮﻓﻪ</p>
+    </div>
+
+    <!-- Javascript Kısmı -->
+    <script>
+        const enterBtn = document.getElementById('enterBtn');
+        const scaryScreen = document.getElementById('scaryScreen');
+
+        enterBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Hoşgeldin kısmını gizle
+            document.querySelector('.container').style.display = 'none';
+            // Korkutucu ekranı göster
+            scaryScreen.style.display = 'flex';
+
+            // Korkutucu müziği çal
+            const audio = new Audio('https://your-scary-music-url.com'); // Müzik linkini buraya koyabilirsin
+            audio.play();
+        });
+    </script>
+</body>
+</html>
